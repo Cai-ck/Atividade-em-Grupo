@@ -5,4 +5,16 @@ df = pl.read_csv("Dados/vendas_ficticias.csv")
 
 total_vendido = df["quantidade"].sum()
 
-st.write(f"O total de produtos vendidos é: {total_vendido}")   
+st.set_page_config(
+    layout="wide", # Faz o site usar a tela toda
+)
+
+st.title("Mostrando total de produtos vendidos! 🫶🏾🤡")
+
+col1, = st.columns(1)
+
+with col1:
+    st.metric(label="Quantidade Total de produtos vendidos: ", value= total_vendido)
+
+
+st.divider() # Uma linha sutil para separar as seções
