@@ -1,0 +1,8 @@
+import pandas as pd
+
+path_csv = "Dados/vendas_ficticias.csv"
+df = pd.read_csv(path_csv)
+
+nr_vendas = len(df)
+
+print("\nNúmero de vendas:", nr_vendas)
