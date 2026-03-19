@@ -1,20 +1,12 @@
-import polars as pl
+import pandas as pd
 import streamlit as st
 
-df = pl.read_csv("Dados/vendas_ficticias.csv") 
+# carregar dados
+df = pd.read_csv("vendas_ficticias.csv")
 
-total_vendido = df["quantidade"].sum()
+# calcular média
+media_valor_venda = df["valor"].mean()
 
-st.set_page_config(
-    layout="wide", # Faz o site usar a tela toda
-)
-
-st.title("Mostrando total de produtos vendidos! 🫶🏾🤡")
-
-col1, = st.columns(1) #cria uma coluna, e precisa da "," no final do col1
-
-with col1:
-    st.metric(label="Quantidade Total de produtos vendidos: ", value= total_vendido)
-
-
-st.divider() # Uma linha sutil para separar as seções
+# mostrar resultado
+st.title("Dashboard de Vendas")
+st.metric("Média de valor por venda", f"R$ {media_valor_venda:.2f}")
