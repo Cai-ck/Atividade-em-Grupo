@@ -11,7 +11,7 @@ st.set_page_config(
 
 st.title("Mostrando total de produtos vendidos! 🫶🏾🤡")
 
-col1, = st.columns(1)
+col1, = st.columns(1) #cria uma coluna, e precisa da "," no final do col1
 
 with col1:
     st.metric(label="Quantidade Total de produtos vendidos: ", value= total_vendido)
